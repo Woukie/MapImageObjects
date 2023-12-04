@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -27,31 +27,31 @@
   
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\core\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="MapsExtended">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\olavim-MapsExtended\MapsExtended.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\MapsExtended.dll</HintPath>
     </Reference>
     <Reference Include="MapsExtended.Editor">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\olavim-MapsExtendedEditor\MapsExtended.Editor.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\MapsExtended.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnboundLib">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\UnboundLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

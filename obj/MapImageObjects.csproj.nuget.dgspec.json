@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "N:\\Git\\MapImageObjects\\MapImageObjects.csproj": {}
+    "C:\\Users\\lucas\\Documents\\MapImageObjects\\MapImageObjects.csproj": {}
   },
   "projects": {
-    "N:\\Git\\MapImageObjects\\MapImageObjects.csproj": {
+    "C:\\Users\\lucas\\Documents\\MapImageObjects\\MapImageObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "N:\\Git\\MapImageObjects\\MapImageObjects.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Documents\\MapImageObjects\\MapImageObjects.csproj",
         "projectName": "MapImageObjects",
-        "projectPath": "N:\\Git\\MapImageObjects\\MapImageObjects.csproj",
+        "projectPath": "C:\\Users\\lucas\\Documents\\MapImageObjects\\MapImageObjects.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "N:\\Git\\MapImageObjects\\obj\\",
+        "outputPath": "C:\\Users\\lucas\\Documents\\MapImageObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",

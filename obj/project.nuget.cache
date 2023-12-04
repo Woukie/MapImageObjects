@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vsgtvbFuur2hlzE0s/sB93X2WJe+w4vKT0cneA7SZEJ5mNPXcRe8kS3gDov3xSND+wMoB1lLBL+tHaU1lan2ew==",
+  "dgSpecHash": "nFTnoqkoA6syVE3y+fRfRibBYZ3cabFTdmEWbcyo8tFgCd7kcRrAuRsDnsj0WTBnYUjufJaYEmWb4+a/J9xlRQ==",
   "success": true,
-  "projectFilePath": "N:\\Git\\MapImageObjects\\MapImageObjects.csproj",
+  "projectFilePath": "C:\\Users\\lucas\\Documents\\MapImageObjects\\MapImageObjects.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\bepinex.baselib\\5.4.20\\bepinex.baselib.5.4.20.nupkg.sha512",

@@ -17,7 +17,7 @@
           "Assembly-CSharp": "0.0.0.0",
           "MapsExtended": "0.0.0.0",
           "MapsExtended.Editor": "0.0.0.0",
-          "UnboundLib": "3.2.12.0",
+          "UnboundLib": "3.2.13.0",
           "UnityEngine.UI": "1.0.0.0"
         },
         "runtime": {
@@ -414,11 +414,11 @@
           }
         }
       },
-      "UnboundLib/3.2.12.0": {
+      "UnboundLib/3.2.13.0": {
         "runtime": {
           "UnboundLib.dll": {
-            "assemblyVersion": "3.2.12.0",
-            "fileVersion": "3.2.12.0"
+            "assemblyVersion": "3.2.13.0",
+            "fileVersion": "3.2.13.0"
           }
         }
       },
@@ -555,6 +555,14 @@
           "HalFloat.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MMHOOK_Assembly-CSharp/0.0.0.0": {
+        "runtime": {
+          "MMHOOK_Assembly-CSharp.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -918,7 +926,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UnboundLib/3.2.12.0": {
+    "UnboundLib/3.2.13.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1004,6 +1012,11 @@
       "sha512": ""
     },
     "HalFloat/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MMHOOK_Assembly-CSharp/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
