@@ -1,7 +1,7 @@
 ﻿using MapsExt.Properties;
 using UnityEngine;
 
-namespace MapImageObjects.Properties;
+namespace MapImageObjects.Core.Properties;
 public class ColorProperty : ValueProperty<Color>, ILinearProperty<ColorProperty> {
     public static Color32 defaultColor = new Color32(255, 255, 255, 255);
 

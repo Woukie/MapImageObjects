@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>MapImageObjectsEditor</AssemblyName>
+    <Description>Adds web image map objects to the editor!</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>MapImageObjectsEditor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="2018.4.31" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MapsExtended">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\MapsExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="MapImageObjects">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\MapImageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MapsExtended.Editor">
+      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\olavim-MapsExtendedEditor\MapsExtended.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnboundLib">
+      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

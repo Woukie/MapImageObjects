@@ -1,9 +1,8 @@
 ﻿using MapsExt.Properties;
-using System;
 using UnboundLib;
 using UnityEngine;
 
-namespace MapImageObjects.Properties;
+namespace MapImageObjects.Core.Properties;
 
 [PropertySerializer(typeof(ColorProperty))]
 public class ColorPropertySerializer : IPropertyWriter<ColorProperty> {
