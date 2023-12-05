@@ -1,0 +1,11 @@
+{
+  "name": "MapImageObjects",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Woukie/MapImageObjects",
+  "description": "Adds the image map object that gets images from the web.",
+  "dependencies": [
+    "BepInEx-BepInExPack_ROUNDS-5.4.1900",
+    "olavim-MapsExtended-1.4.2",
+    "willis81808-UnboundLib-3.2.13"
+  ]
+}

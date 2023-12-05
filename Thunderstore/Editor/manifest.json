@@ -1,0 +1,13 @@
+{
+  "name": "MapImageObjectsEditor",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Woukie/MapImageObjects",
+  "description": "Adds image map objects to the editor.",
+  "dependencies": [
+    "BepInEx-BepInExPack_ROUNDS-5.4.1900",
+    "olavim-MapsExtended-1.4.2",
+    "olavim-MapsExtendedEditor-1.4.2",
+    "woukie-MapImageObjects-1.0.0",
+    "willis81808-UnboundLib-3.2.13"
+  ]
+}

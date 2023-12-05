@@ -43,7 +43,7 @@ public class URIComponent : MonoBehaviour
                 UnityWebRequestAsyncOperation asyncOp = www.SendWebRequest();
 
                 while (!asyncOp.isDone) {
-                    // TODO: Potentially implement timeout here
+                    // TODO: Potentially implement timeout feature here
                     // Check for cancellations, otherwise do nothing while loading
 
                     if (token.IsCancellationRequested) {
@@ -60,8 +60,8 @@ public class URIComponent : MonoBehaviour
             await task;
             UpdateWithTexture(texture);
 
-        } catch (OperationCanceledException e) {
-            // Cancellations expected
+        } catch (OperationCanceledException) {
+            // Ignore, cancellations expected
         }
     }
 
