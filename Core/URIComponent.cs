@@ -9,6 +9,7 @@ namespace MapImageObjects.Core;
 public class URIComponent : MonoBehaviour
 {
     private string uri; // epic pic: https://raw.githubusercontent.com/Woukie/Image/main/cover%20transparent.png
+    private CancellationTokenSource tokenSource = new CancellationTokenSource(); // Used to cancel loading images
 
     public string GetURI()
     {
@@ -18,34 +19,60 @@ public class URIComponent : MonoBehaviour
     public void SetURI(string uri)
     {
         this.uri = uri;
+
         LoadImage();
     }
 
     public async void LoadImage()
     {
         Texture2D texture = null;
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
-        try
-        {
-            texture = await GetRemoteTexture(uri);
-        }
-        catch
-        {
-            Console.WriteLine("Failed to load image!");
-        }
+        // Cancel and reset the token
+        tokenSource.Cancel();
+        tokenSource.Dispose();
+        tokenSource = new CancellationTokenSource();
 
-        if (texture == null)
-        {
-            texture = Texture2D.whiteTexture;
-        }
+        CancellationToken token = tokenSource.Token;
 
-        spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
-        UpdateCollision();
+        Task task = Task.Run(() => {
+            Console.WriteLine("Running image task...");
+
+            token.ThrowIfCancellationRequested();
+
+            using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(GetURI())) {
+                UnityWebRequestAsyncOperation asyncOp = www.SendWebRequest();
+
+                while (!asyncOp.isDone) {
+                    // TODO: Potentially implement timeout here
+                    // Check for cancellations, otherwise do nothing while loading
+
+                    if (token.IsCancellationRequested) {
+                        // TODO: Set sprite to nothing, or leave (will only run if new image is loading (eg user changes url in the input box))
+                        token.ThrowIfCancellationRequested();
+                    }
+                };
+
+                texture = www.isNetworkError || www.isHttpError ? Texture2D.whiteTexture : DownloadHandlerTexture.GetContent(www);
+            }
+        }, tokenSource.Token);
+
+        try {
+            await task;
+            UpdateWithTexture(texture);
+
+        } catch (OperationCanceledException e) {
+            // Cancellations expected
+        }
     }
 
-    public void UpdateCollision()
+    // Updates sprite, collision and SFPolygon
+    private void UpdateWithTexture(Texture2D texture)
     {
+        if (texture == null) return;
+
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
+
         Destroy(gameObject.GetComponent<PolygonCollider2D>());
         Destroy(gameObject.GetComponent<SFPolygon>());
 
@@ -53,44 +80,8 @@ public class URIComponent : MonoBehaviour
         SFPolygon polygon = gameObject.AddComponent<SFPolygon>();
 
         for (int i = 0; i < collider.pathCount; i++)
-        { // Will always be higher
+        { // collider path count will always be higher than polygon path count
             polygon.SetPath(i, collider.GetPath(i));
-        }
-    }
-
-    // Yoink
-    // https://stackoverflow.com/a/53770838
-    // TODO: Timeout
-    private static async Task<Texture2D> GetRemoteTexture(string url, int timeoutSeconds = 30)
-    {
-        using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(url))
-        {
-            var cancellationTokenSource = new CancellationTokenSource();
-            var asyncOp = www.SendWebRequest();
-
-            Task request = WaitForWebRequestCompletion(www, cancellationTokenSource.Token);
-            Task timeout = Task.Delay(TimeSpan.FromSeconds(timeoutSeconds));
-            Task completedTask = await Task.WhenAny(request, timeout);
-
-            if (completedTask == request)
-            {
-                cancellationTokenSource.Cancel();
-                return www.isNetworkError || www.isHttpError ? null : DownloadHandlerTexture.GetContent(www);
-            }
-            else
-            {
-                throw new TimeoutException("The operation timed out.");
-            }
-        }
-    }
-
-    private static async Task WaitForWebRequestCompletion(UnityWebRequest www, CancellationToken cancellationToken)
-    {
-        while (!www.isDone)
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-
-            await Task.Delay(1000 / 30);
         }
     }
 }
