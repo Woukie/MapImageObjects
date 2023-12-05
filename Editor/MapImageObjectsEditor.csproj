@@ -27,22 +27,22 @@
   
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="MapsExtended">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\MapsExtended.dll</HintPath>
+      <HintPath>..\Dependencies\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="MapImageObjects">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins\MapImageObjects.dll</HintPath>
+      <HintPath>..\Dependencies\MapImageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MapsExtended">
+      <HintPath>..\Dependencies\MapsExtended.dll</HintPath>
     </Reference>
     <Reference Include="MapsExtended.Editor">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\olavim-MapsExtendedEditor\MapsExtended.Editor.dll</HintPath>
+      <HintPath>..\Dependencies\MapsExtended.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnboundLib">
-      <HintPath>C:\Users\lucas\AppData\Roaming\Thunderstore Mod Manager\DataFolder\ROUNDS\profiles\Mapping\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
+      <HintPath>..\Dependencies\UnboundLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\Dependencies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

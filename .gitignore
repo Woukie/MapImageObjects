@@ -1,2 +1,6 @@
 ﻿*.vs/
 .git
+bin
+obj
+Dependencies
+Build
