@@ -35,10 +35,6 @@ If you do install manually, make sure to also install the related dependencies d
 
 ## FAQ
 
-#### My image shows an old image / isn't updating in the editor!
-
-For performance, Images are now cached so if you type in a URL, it will store so it doesnt have to get it from the URL again. You have to re-open the game if you want to reset the cache.
-
 #### Weird shadows/collision
 
 The shadows are determined by the collision, and Unity generates collision based on the texture. If the texture has a low resolution (like with pixel art), Unity will generate lower-resolution collision. It's a pain, but the solution is to upscale the image to a higher resolution or create the collision manually using invisible objects.
