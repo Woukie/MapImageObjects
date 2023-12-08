@@ -75,23 +75,32 @@ public class URIComponent : MonoBehaviour
     }
 
     // Updates sprite, collision and SFPolygon
+    // I have no idea what keeps causing this to crash, so I surrounded with try catch as a temp solution
     private void UpdateWithTexture(Texture2D texture)
     {
-        if (texture == null) return;
-
-        SpriteRenderer spriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
-        
-        Destroy(gameObject.GetComponent<PolygonCollider2D>());
-        Destroy(gameObject.GetComponent<SFPolygon>());
-
-        PolygonCollider2D collider = gameObject.AddComponent<PolygonCollider2D>();
-        SFPolygon polygon = gameObject.AddComponent<SFPolygon>();
-
-        polygon.pathCount = collider.pathCount;
-        for (int i = 0; i < collider.pathCount; i++)
+        try
         {
-            polygon.SetPath(i, collider.GetPath(i));
+            if (texture == null) return;
+
+            SpriteRenderer spriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
+
+            if (!(gameObject.GetComponent<PolygonCollider2D>() && gameObject.GetComponent<SFPolygon>())) return; // Return when object has no collision
+
+            Destroy(gameObject.GetComponent<PolygonCollider2D>());
+            Destroy(gameObject.GetComponent<SFPolygon>());
+
+            PolygonCollider2D collider = gameObject.AddComponent<PolygonCollider2D>();
+            SFPolygon polygon = gameObject.AddComponent<SFPolygon>();
+
+            polygon.pathCount = collider.pathCount;
+            for (int i = 0; i < collider.pathCount; i++)
+            {
+                polygon.SetPath(i, collider.GetPath(i));
+            }
+        } catch (Exception e)
+        {
+            throw e;
         }
     }
 }

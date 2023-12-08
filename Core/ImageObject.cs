@@ -32,6 +32,13 @@ public class ImageObject : IMapObject
         UnityEngine.Object.Destroy(instance.GetComponent<ComponentType>());
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
         spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+        // Move to background if it has no collision
+        if (!instance.GetComponent<PolygonCollider2D>())
+        {
+            spriteRenderer.sortingLayerName = "Background"; 
+        }
+
         instance.GetOrAddComponent<ColorComponent>().ApplyColor();
 
         return;
