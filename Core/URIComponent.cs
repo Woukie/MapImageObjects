@@ -61,6 +61,7 @@ public class URIComponent : MonoBehaviour
                 };
 
                 texture = www.isNetworkError || www.isHttpError ? Texture2D.whiteTexture : DownloadHandlerTexture.GetContent(www);
+                texture.filterMode = FilterMode.Point;
             }
         }, tokenSource.Token);
 
@@ -80,7 +81,7 @@ public class URIComponent : MonoBehaviour
 
         SpriteRenderer spriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
         spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
-
+        
         Destroy(gameObject.GetComponent<PolygonCollider2D>());
         Destroy(gameObject.GetComponent<SFPolygon>());
 
