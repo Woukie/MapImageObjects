@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using UnityEngine;
 using System.Threading;
 using System;
+using UnboundLib;
 
 namespace MapImageObjects.Core;
 
@@ -77,7 +78,7 @@ public class URIComponent : MonoBehaviour
     {
         if (texture == null) return;
 
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
         spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
 
         Destroy(gameObject.GetComponent<PolygonCollider2D>());
@@ -86,8 +87,9 @@ public class URIComponent : MonoBehaviour
         PolygonCollider2D collider = gameObject.AddComponent<PolygonCollider2D>();
         SFPolygon polygon = gameObject.AddComponent<SFPolygon>();
 
+        polygon.pathCount = collider.pathCount;
         for (int i = 0; i < collider.pathCount; i++)
-        { // collider path count will always be higher than polygon path count
+        {
             polygon.SetPath(i, collider.GetPath(i));
         }
     }
