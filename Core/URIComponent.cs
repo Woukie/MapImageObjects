@@ -76,9 +76,7 @@ public class URIComponent : MonoBehaviour
             if (texture != null)
             {
                 sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
-
-                // Only cache working URIs
-                if (texture != Texture2D.whiteTexture) Plugin.ImageCache.Add(uri, sprite);
+                if (!Plugin.ImageCache.ContainsKey(uri)) Plugin.ImageCache.Add(uri, sprite);
 
                 UpdateWithSprite(sprite);
             }
