@@ -12,7 +12,7 @@ public class EditorColorPropertySerializer : ColorPropertySerializer, IPropertyR
     {
         var spriteRenderer = instance.GetComponentInChildren<SpriteRenderer>();
 
-        Color color = new Color32(255, 255, 255, 255);
+        Color color = new Color32(200, 200, 200, 255);
 
         if (spriteRenderer != null)
         {

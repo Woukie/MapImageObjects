@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MapImageObjects.Core.Properties;
 public class ColorProperty : ValueProperty<Color>, ILinearProperty<ColorProperty> {
-    public static Color32 defaultColor = new Color32(255, 255, 255, 255);
+    public static Color32 defaultColor = new Color32(200, 200, 200, 255);
 
     [SerializeField] private readonly int _r;
     [SerializeField] private readonly int _g;
