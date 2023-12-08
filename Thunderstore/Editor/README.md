@@ -1,11 +1,6 @@
+# MapImageObjectsEditor
 
-# MapImageObjects
-
-You can finally add images from the web to your maps! Images can be placed and configured extensively in the editor with the editor mod (MapImageObjectsEditor).
-
-⚠ [WARNING] This mod uses urls to load images while you play the game! ⚠
-- If you are a map maker, host the files somewhere where the hosters don't mind you doing this.
-- Also, make sure the links you use are permanent!
+This adds MapImageObjects to the editor! Create maps with custom images!
 
 ## Features
 
@@ -23,10 +18,12 @@ There are two mods: One for map-makers and one for users. (If you are a map-make
 If you do install manually, make sure to also install the related dependencies depending on which one you go for:
 
 #### MapImageObjects
+
 - unbound
 - mapsextended
 
 #### MapImageObjectsEditor
+
 - unbound
 - mapimageobjects
 - mapsextended
@@ -44,5 +41,4 @@ Submit an issue on GitHub!
 
 ## Acknowledgements
 
- - [willuwontu](https://github.com/willuwontu), I yoinked the color property code from **WillsWackyMapObjects**
- 
+- [willuwontu](https://github.com/willuwontu), I yoinked the color property code from **WillsWackyMapObjects**

@@ -3,10 +3,6 @@
 
 You can finally add images from the web to your maps! Images can be placed and configured extensively in the editor with the editor mod (MapImageObjectsEditor).
 
-⚠ [WARNING] This mod uses urls to load images while you play the game! ⚠
-- If you are a map maker, host the files somewhere where the hosters don't mind you doing this.
-- Also, make sure the links you use are permanent!
-
 ## Features
 
 - Collision
