@@ -35,9 +35,9 @@ If you do install manually, make sure to also install the related dependencies d
 
 ## FAQ
 
-#### My image isn't updating in the editor!
+#### My image shows an old image / isn't updating in the editor!
 
-Images are now cached so you have to reopen the game.
+For performance, Images are now cached so if you type in a URL, it will store so it doesnt have to get it from the URL again. You have to re-open the game if you want to reset the cache.
 
 #### Weird shadows/collision
 
