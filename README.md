@@ -13,6 +13,7 @@ You can finally add images from the web to your maps! Images can be placed and c
 - Editor Tools
 - Shadows
 - Lots of object properties!
+- Caches images as they load
 
 ## Installation
 
@@ -33,6 +34,10 @@ If you do install manually, make sure to also install the related dependencies d
 - mapsextended.editor
 
 ## FAQ
+
+#### My image shows an old image / isn't updating in the editor!
+
+For performance, Images are now cached so if you type in a URL, it will store so it doesnt have to get it from the URL again. You have to re-open the game if you want to reset the cache.
 
 #### Weird shadows/collision
 
