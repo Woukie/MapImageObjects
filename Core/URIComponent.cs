@@ -11,6 +11,13 @@ public class URIComponent : MonoBehaviour
     private string uri; // epic pic: https://raw.githubusercontent.com/Woukie/Image/main/cover%20transparent.png
     private CancellationTokenSource tokenSource = new CancellationTokenSource(); // Used to cancel loading images
 
+    // Stop loading any images if the image is destoryed
+    public void OnDestroy()
+    {
+        tokenSource.Cancel();
+        tokenSource.Dispose();
+    }
+
     public string GetURI()
     {
         return uri;
