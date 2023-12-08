@@ -9,10 +9,10 @@ This adds MapImageObjects to the editor! Create maps with custom images!
 ## Features
 
 - Collision
-- Non-Collision
 - Editor Tools
 - Shadows
 - Lots of object properties!
+- Caches images as they load
 
 ## Installation
 

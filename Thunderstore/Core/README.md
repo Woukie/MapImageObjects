@@ -10,10 +10,10 @@ You can finally add images from the web to your maps! Images can be placed and c
 ## Features
 
 - Collision
-- Non-Collision
 - Editor Tools
 - Shadows
 - Lots of object properties!
+- Caches images as they load
 
 ## Installation
 
