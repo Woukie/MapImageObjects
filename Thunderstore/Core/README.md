@@ -3,9 +3,14 @@
 
 You can finally add images from the web to your maps! Images can be placed and configured extensively in the editor with the editor mod (MapImageObjectsEditor).
 
+⚠ [WARNING] This mod uses urls to load images while you play the game! ⚠
+- If you are a map maker, host the files somewhere where the hosters don't mind you doing this.
+- Also, make sure the links you use are permanent!
+
 ## Features
 
 - Collision
+- Non-Collision
 - Editor Tools
 - Shadows
 - Lots of object properties!
@@ -29,6 +34,10 @@ If you do install manually, make sure to also install the related dependencies d
 - mapsextended.editor
 
 ## FAQ
+
+#### Weird shadows/collision
+
+The shadows are determined by the collision, and Unity generates collision based on the texture. If the texture has a low resolution (like with pixel art), Unity will generate lower-resolution collision. It's a pain, but the solution is to upscale the image to a higher resolution or create the collision manually using invisible objects.
 
 #### How do I share my maps?
 
