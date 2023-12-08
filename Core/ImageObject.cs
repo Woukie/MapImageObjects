@@ -28,7 +28,6 @@ public class ImageObject : IMapObject
     {
         while (instance.GetComponent<ComponentType>() == null) await Task.Delay(1000 / 30);
 
-        Console.WriteLine("Loading new material");
         UnityEngine.Object.Destroy(instance.GetComponent<ComponentType>());
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
         spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));

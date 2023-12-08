@@ -50,8 +50,6 @@ public class URIComponent : MonoBehaviour
         CancellationToken token = tokenSource.Token;
 
         Task task = Task.Run(() => {
-            Console.WriteLine("Running image task...");
-
             token.ThrowIfCancellationRequested();
 
             using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(GetURI())) {
@@ -77,13 +75,11 @@ public class URIComponent : MonoBehaviour
 
             if (texture != null)
             {
-                // Only cache working URIs
-                if (texture != Texture2D.whiteTexture)
-                {
-                    Plugin.ImageCache.Add(uri, sprite);
-                }
-
                 sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
+
+                // Only cache working URIs
+                if (texture != Texture2D.whiteTexture) Plugin.ImageCache.Add(uri, sprite);
+
                 UpdateWithSprite(sprite);
             }
 
