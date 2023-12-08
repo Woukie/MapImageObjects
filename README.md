@@ -34,6 +34,10 @@ If you do install manually, make sure to also install the related dependencies d
 
 ## FAQ
 
+#### Weird shadows/collision
+
+The shadows are determined by the collision, and Unity generates collision based on the texture. If the texture has a low resolution (like with pixel art), Unity will generate lower-resolution collision. It's a pain, but the solution is to upscale the image to a higher resolution or create the collision manually using invisible objects.
+
 #### How do I share my maps?
 
 [Here's](https://docs.google.com/document/d/1f0bZvolXIGhVRpIURijiVFN2k6p7bZQlzpfVuIE-HFw/edit#heading=h.1r8wfrbpupek) a good place to learn
