@@ -7,7 +7,7 @@ namespace MapImageObjects.Editor;
 [BepInDependency("com.woukie.rounds.mapimageobjects")]
 [BepInDependency("io.olavim.rounds.mapsextended")]
 [BepInDependency("io.olavim.rounds.mapsextended.editor")]
-[BepInPlugin("com.woukie.rounds.mapimageobjectseditor", "MapImageObjectsEditor", "1.1.1")]
+[BepInPlugin("com.woukie.rounds.mapimageobjectseditor", "MapImageObjectsEditor", "1.1.2")]
 [BepInProcess("Rounds.exe")]
 public class Plugin : BaseUnityPlugin
 {
