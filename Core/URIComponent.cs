@@ -33,12 +33,19 @@ public class URIComponent : MonoBehaviour
 
     public async void LoadImage()
     {
-        Texture2D texture = null;
-
         // Cancel and reset the token
         tokenSource.Cancel();
         tokenSource.Dispose();
         tokenSource = new CancellationTokenSource();
+
+        Sprite sprite = null;
+        if (Plugin.ImageCache.TryGetValue(uri, out sprite))
+        {
+            UpdateWithSprite(sprite);
+            return;
+        }
+
+        Texture2D texture = null;
 
         CancellationToken token = tokenSource.Token;
 
@@ -67,7 +74,18 @@ public class URIComponent : MonoBehaviour
 
         try {
             await task;
-            UpdateWithTexture(texture);
+
+            if (texture != null)
+            {
+                // Only cache working URIs
+                if (texture != Texture2D.whiteTexture)
+                {
+                    Plugin.ImageCache.Add(uri, sprite);
+                }
+
+                sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
+                UpdateWithSprite(sprite);
+            }
 
         } catch (OperationCanceledException) {
             // Ignore, cancellations expected
@@ -76,14 +94,12 @@ public class URIComponent : MonoBehaviour
 
     // Updates sprite, collision and SFPolygon
     // I have no idea what keeps causing this to crash, so I surrounded with try catch as a temp solution
-    private void UpdateWithTexture(Texture2D texture)
+    private void UpdateWithSprite(Sprite sprite)
     {
         try
         {
-            if (texture == null) return;
-
             SpriteRenderer spriteRenderer = gameObject.GetOrAddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), texture.height);
+            spriteRenderer.sprite = sprite;
 
             if (!(gameObject.GetComponent<PolygonCollider2D>() && gameObject.GetComponent<SFPolygon>())) return; // Return when object has no collision
 

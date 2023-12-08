@@ -1,5 +1,7 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace MapImageObjects.Core;
 
@@ -9,6 +11,9 @@ namespace MapImageObjects.Core;
 [BepInProcess("Rounds.exe")]
 public class Plugin : BaseUnityPlugin
 {
+    // Maps URI to sprite
+    public static Dictionary<string, Sprite> ImageCache = new Dictionary<string, Sprite>();
+
     private void Awake()
     {
         var harmony = new Harmony("com.woukie.rounds.mapimageobjects");
