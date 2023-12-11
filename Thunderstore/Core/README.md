@@ -9,9 +9,11 @@ You can finally add images from the web to your maps! Images can be placed and c
 
 ## Features
 
-- Collision
-- Editor Tools
-- Shadows
+- Collision matches image
+- Physics images
+- Breakable images
+- Editor tools
+- Shadows match image
 - Lots of object properties!
 - Caches images as they load
 

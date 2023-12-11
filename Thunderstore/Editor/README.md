@@ -8,9 +8,11 @@ This adds MapImageObjects to the editor! Create maps with custom images!
 
 ## Features
 
-- Collision
-- Editor Tools
-- Shadows
+- Collision matches image
+- Physics images
+- Breakable images
+- Editor tools
+- Shadows match image
 - Lots of object properties!
 - Caches images as they load
 
