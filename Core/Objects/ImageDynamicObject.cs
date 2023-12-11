@@ -6,16 +6,14 @@ using UnityEngine;
 
 namespace MapImageObjects.Core;
 
-[MapObject(typeof(ImageDestructibleObjectData))]
-public class ImageDestructibleObject : ImageObject
+[MapObject(typeof(ImageDynamicObjectData))]
+public class ImageDynamicObject : ImageObject
 {
-    public override GameObject Prefab => MapObjectManager.LoadCustomAsset<GameObject>("Box Destructible");
+    public override GameObject Prefab => MapObjectManager.LoadCustomAsset<GameObject>("Box");
 
     public override void OnInstantiate(GameObject instance)
     {
-        // Remove the 'color' child, responsible for putting the 'box' sprite over the object and effects like blinking when shot.
-        // Can't really get around this, effects interfere with too much, eg blinking also sets colour.
-        GameObject.Destroy(instance.transform.GetChild(0).gameObject);
+        // GameObject.Destroy(instance.transform.GetChild(0).gameObject);
 
         instance.GetComponent<Collider2D>().enabled = false;
         instance.AddComponent<PolygonCollider2D>();
@@ -23,6 +21,9 @@ public class ImageDestructibleObject : ImageObject
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
         spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+        GameObject.Destroy(instance.transform.GetChild(0).gameObject); // Background
+        GameObject.Destroy(instance.transform.GetChild(1).gameObject); // Lines
 
         instance.GetOrAddComponent<ColorComponent>().ApplyColor();
     }
