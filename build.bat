@@ -28,9 +28,10 @@ title Deploying...
 
 echo Moving built dll files to deploy location...
 copy "%pathBuild%\Core\MapImageObjects.dll" "%pathDeploy%"
+copy "%pathBuild%\Core\MapImageObjects.dll" "Dependencies"
 copy "%pathBuild%\Editor\MapImageObjectsEditor.dll" "%pathDeploy%"
 
 title Build Complete
 
-echo Build complete. Output is in the "%pathBuild%" folder. DLL files deployed to: "%pathDeploy%"
+echo Build complete. Output is in the "%pathBuild%" folder. DLL files deployed to: "%pathDeploy%" and added to "Dependencies".
 pause
