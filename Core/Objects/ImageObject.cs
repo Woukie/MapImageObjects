@@ -2,8 +2,9 @@
 using MapsExt;
 using System.Threading.Tasks;
 using UnityEngine;
-using System;
 using UnboundLib;
+using MapImageObjects.Core.Components;
+using System;
 
 namespace MapImageObjects.Core;
 
@@ -11,7 +12,7 @@ namespace MapImageObjects.Core;
 public class ImageObject : IMapObject
 {
     // IDK how custom assets work with bepinex so we just use this and set them up in OnInstantiate()
-    public GameObject Prefab => MapObjectManager.LoadCustomAsset<GameObject>("Ground");
+    public virtual GameObject Prefab => MapObjectManager.LoadCustomAsset<GameObject>("Ground");
 
     public virtual void OnInstantiate(GameObject instance)
     {
@@ -29,13 +30,13 @@ public class ImageObject : IMapObject
         while (instance.GetComponent<ComponentType>() == null) await Task.Delay(1000 / 30);
 
         UnityEngine.Object.Destroy(instance.GetComponent<ComponentType>());
-        SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = instance.GetOrAddComponent<SpriteRenderer>();
         spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
         // Move to background if it has no collision
         if (!instance.GetComponent<PolygonCollider2D>())
         {
-            spriteRenderer.sortingLayerName = "Background"; 
+            spriteRenderer.sortingLayerName = "Background";
         }
 
         instance.GetOrAddComponent<ColorComponent>().ApplyColor();
