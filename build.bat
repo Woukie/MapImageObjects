@@ -1,33 +1,36 @@
 @echo off
 cls
 
-REM Set the paths to the project folders
-set "coreProjectPath=Core"
-set "editorProjectPath=Editor"
-set "buildFolderPath=Build"
+set "pathCore=Core"
+set "pathEditor=Editor"
+set "pathBuild=Build"
+set "pathDeploy=C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins"
 
-REM Create the "Build" folder if it doesn't exist
-if not exist "%buildFolderPath%" (
-    mkdir "%buildFolderPath%"
+if not exist "%pathBuild%" (
+    mkdir "%pathBuild%"
 )
 
-REM Build the Core project
+title Building Core...
+
 echo Building Core...
-cd "%coreProjectPath%"
-dotnet build -c Release -o "../%buildFolderPath%/Core"
+cd "%pathCore%"
+dotnet build -c Release -o "../%pathBuild%/Core"
 cd ..
 
-REM Change title for Editor build
 title Building Editor...
 
-REM Build the Editor project
 echo Building Editor...
-cd "%editorProjectPath%"
-dotnet build -c Release -o "../%buildFolderPath%/Editor"
+cd "%pathEditor%"
+dotnet build -c Release -o "../%pathBuild%/Editor"
 cd ..
 
-REM Change title back to default
+title Deploying...
+
+echo Moving built dll files to deploy location...
+copy "%pathBuild%\Core\MapImageObjects.dll" "%pathDeploy%"
+copy "%pathBuild%\Editor\MapImageObjectsEditor.dll" "%pathDeploy%"
+
 title Build Complete
 
-echo Build complete. Output is in the "%buildFolderPath%" folder.
+echo Build complete. Output is in the "%pathBuild%" folder. DLL files deployed to: "%pathDeploy%"
 pause
