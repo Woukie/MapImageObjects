@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MapImageObjects.Editor.Objects;
 
-[EditorMapObject(typeof(ImageBackgroundObjectData), "Image (Background)")]
+[EditorMapObject(typeof(ImageBackgroundObjectData), "Image (Background)", Category = "Static")]
 public class EditorImageBackgroundObject : ImageBackgroundObject
 {
     public override void OnInstantiate(GameObject instance)
