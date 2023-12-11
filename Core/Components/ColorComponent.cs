@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MapImageObjects;
+namespace MapImageObjects.Core.Components;
 
 public class ColorComponent : MonoBehaviour
 {

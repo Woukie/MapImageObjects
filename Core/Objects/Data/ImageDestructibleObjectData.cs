@@ -1,6 +1,6 @@
 ﻿using MapsExt.Properties;
 
-namespace MapImageObjects.Objects.Data;
+namespace MapImageObjects.Core;
 
 public class ImageDestructibleObjectData : ImageObjectData { 
     public DamageableProperty DamageableProperty = new DamageableProperty();

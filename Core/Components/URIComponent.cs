@@ -5,7 +5,7 @@ using System.Threading;
 using System;
 using UnboundLib;
 
-namespace MapImageObjects;
+namespace MapImageObjects.Core.Components;
 
 public class URIComponent : MonoBehaviour
 {
@@ -49,17 +49,21 @@ public class URIComponent : MonoBehaviour
 
         CancellationToken token = tokenSource.Token;
 
-        Task task = Task.Run(() => {
+        Task task = Task.Run(() =>
+        {
             token.ThrowIfCancellationRequested();
 
-            using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(GetURI())) {
+            using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(GetURI()))
+            {
                 UnityWebRequestAsyncOperation asyncOp = www.SendWebRequest();
 
-                while (!asyncOp.isDone) {
+                while (!asyncOp.isDone)
+                {
                     // TODO: Potentially implement timeout feature here
                     // Check for cancellations, otherwise do nothing while loading
 
-                    if (token.IsCancellationRequested) {
+                    if (token.IsCancellationRequested)
+                    {
                         // TODO: Set sprite to nothing, or leave (will only run if new image is loading (eg user changes url in the input box))
                         token.ThrowIfCancellationRequested();
                     }
@@ -70,7 +74,8 @@ public class URIComponent : MonoBehaviour
             }
         }, tokenSource.Token);
 
-        try {
+        try
+        {
             await task;
 
             if (texture != null)
@@ -81,7 +86,9 @@ public class URIComponent : MonoBehaviour
                 UpdateWithSprite(sprite);
             }
 
-        } catch (OperationCanceledException) {
+        }
+        catch (OperationCanceledException)
+        {
             // Ignore, cancellations expected
         }
     }
@@ -108,7 +115,8 @@ public class URIComponent : MonoBehaviour
             {
                 polygon.SetPath(i, collider.GetPath(i));
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             throw e;
         }

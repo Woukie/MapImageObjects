@@ -1,8 +1,8 @@
-﻿using MapImageObjects.Properties;
+﻿using MapImageObjects.Core.Properties;
 using MapsExt.MapObjects;
 using MapsExt.Properties;
 
-namespace MapImageObjects.Objects.Data;
+namespace MapImageObjects.Core;
 
 public class ImageObjectData : MapObjectData
 {

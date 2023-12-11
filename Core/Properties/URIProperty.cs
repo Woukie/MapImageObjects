@@ -1,6 +1,6 @@
 ﻿using MapsExt.Properties;
 
-namespace MapImageObjects.Properties;
+namespace MapImageObjects.Core.Properties;
 
 public class URIProperty : IProperty
 {

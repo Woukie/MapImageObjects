@@ -1,4 +1,4 @@
-﻿using MapImageObjects.Properties;
+﻿using MapImageObjects.Core.Properties;
 using MapsExt;
 using MapsExt.Editor.UI;
 using UnityEngine;
@@ -51,7 +51,7 @@ public class URIElement : IInspectorElement
     {
         URIProperty property = new URIProperty();
         property.uri = str;
-        MapImageObjects.Plugin.ImageCache.Clear(); // Hacky but clear the cache so the mapper doesn't have to restart the game if they update an image. This way we still keep the optimisation on the client!
+        Core.Plugin.ImageCache.Clear(); // Hacky but clear the cache so the mapper doesn't have to restart the game if they update an image. This way we still keep the optimisation on the client!
         context.InspectorTarget.WriteProperty(property);
 
         context.Editor.TakeSnaphot();

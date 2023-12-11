@@ -3,9 +3,9 @@ using MapsExt;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnboundLib;
-using MapImageObjects.Objects.Data;
+using MapImageObjects.Core.Components;
 
-namespace MapImageObjects.Objects;
+namespace MapImageObjects.Core;
 
 [MapObject(typeof(ImageObjectData))]
 public class ImageObject : IMapObject

@@ -1,8 +1,7 @@
-﻿using MapImageObjects.Objects.Data;
-using MapsExt.MapObjects;
+﻿using MapsExt.MapObjects;
 using UnityEngine;
 
-namespace MapImageObjects.Objects;
+namespace MapImageObjects.Core;
 
 [MapObject(typeof(ImageBackgroundObjectData))]
 public class ImageBackgroundObject : ImageObject
