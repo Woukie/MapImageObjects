@@ -2,7 +2,7 @@
 using UnboundLib;
 using UnityEngine;
 
-namespace MapImageObjects.Core.Properties;
+namespace MapImageObjects.Properties;
 
 [PropertySerializer(typeof(URIProperty))]
 public class URIPropertySerializer : IPropertyWriter<URIProperty>

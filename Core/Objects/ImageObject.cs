@@ -3,7 +3,6 @@ using MapsExt;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnboundLib;
-using MapImageObjects.Core;
 using MapImageObjects.Objects.Data;
 
 namespace MapImageObjects.Objects;

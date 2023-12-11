@@ -2,7 +2,7 @@
 using UnboundLib;
 using UnityEngine;
 
-namespace MapImageObjects.Core.Properties;
+namespace MapImageObjects.Properties;
 
 [PropertySerializer(typeof(ColorProperty))]
 public class ColorPropertySerializer : IPropertyWriter<ColorProperty> {

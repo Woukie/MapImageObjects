@@ -5,7 +5,7 @@ using System.Threading;
 using System;
 using UnboundLib;
 
-namespace MapImageObjects.Core;
+namespace MapImageObjects;
 
 public class URIComponent : MonoBehaviour
 {

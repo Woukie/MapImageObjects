@@ -3,7 +3,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MapImageObjects.Core;
+namespace MapImageObjects;
 
 [BepInDependency("com.willis.rounds.unbound")]
 [BepInDependency("io.olavim.rounds.mapsextended")]

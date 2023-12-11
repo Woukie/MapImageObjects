@@ -1,4 +1,4 @@
-﻿using MapImageObjects.Core.Properties;
+﻿using MapImageObjects.Properties;
 using MapsExt.Editor.Properties;
 using MapsExt.Properties;
 using UnityEngine;
