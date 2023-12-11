@@ -2,6 +2,6 @@
 
 namespace MapImageObjects.Core;
 
-public class ImageDestructibleObjectData : ImageObjectData { 
+public class ImageDamageableObjectData : ImageObjectData { 
     public DamageableProperty DamageableProperty = new DamageableProperty();
 }
