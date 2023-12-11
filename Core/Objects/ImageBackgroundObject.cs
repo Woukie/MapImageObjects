@@ -1,15 +1,16 @@
-﻿using MapsExt.MapObjects;
+﻿using MapImageObjects.Objects.Data;
+using MapsExt.MapObjects;
 using UnityEngine;
 
-namespace MapImageObjects.Core;
+namespace MapImageObjects.Objects;
 
 [MapObject(typeof(ImageBackgroundObjectData))]
 public class ImageBackgroundObject : ImageObject
 {
     public override void OnInstantiate(GameObject instance)
     {
-        GameObject.Destroy(instance.GetComponent<Collider2D>());
-        GameObject.Destroy(instance.GetComponent<SFPolygon>());
+        Object.Destroy(instance.GetComponent<Collider2D>());
+        Object.Destroy(instance.GetComponent<SFPolygon>());
 
         LateLoad<SpriteMask>(instance);
     }

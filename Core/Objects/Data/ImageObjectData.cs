@@ -2,7 +2,7 @@
 using MapsExt.MapObjects;
 using MapsExt.Properties;
 
-namespace MapImageObjects.Core;
+namespace MapImageObjects.Objects.Data;
 
 public class ImageObjectData : MapObjectData
 {

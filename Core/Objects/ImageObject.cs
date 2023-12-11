@@ -2,10 +2,11 @@
 using MapsExt;
 using System.Threading.Tasks;
 using UnityEngine;
-using System;
 using UnboundLib;
+using MapImageObjects.Core;
+using MapImageObjects.Objects.Data;
 
-namespace MapImageObjects.Core;
+namespace MapImageObjects.Objects;
 
 [MapObject(typeof(ImageObjectData))]
 public class ImageObject : IMapObject
@@ -35,7 +36,7 @@ public class ImageObject : IMapObject
         // Move to background if it has no collision
         if (!instance.GetComponent<PolygonCollider2D>())
         {
-            spriteRenderer.sortingLayerName = "Background"; 
+            spriteRenderer.sortingLayerName = "Background";
         }
 
         instance.GetOrAddComponent<ColorComponent>().ApplyColor();
