@@ -2,7 +2,7 @@
 using MapsExt.Editor.MapObjects;
 using UnityEngine;
 
-namespace MapImageObjectsEditor.Objects;
+namespace MapImageObjects.Editor.Objects;
 
 [EditorMapObject(typeof(ImageObjectData), "Image")]
 public class EditorImageObject : ImageObject
