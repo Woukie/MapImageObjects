@@ -1,6 +1,8 @@
-﻿using MapsExt;
+﻿using MapImageObjects.Core.Components;
+using MapsExt;
 using MapsExt.MapObjects;
 using System;
+using UnboundLib;
 using UnityEngine;
 
 namespace MapImageObjects.Core;
@@ -12,13 +14,17 @@ public class ImageDamageableObject : ImageObject
 
     public override void OnInstantiate(GameObject instance)
     {
-        Console.WriteLine("EARLY LOAD");
-        instance.GetComponent<Rigidbody2D>().isKinematic = true;
         // Remove the 'color' child, responsible for putting the 'box' sprite over the object and effects like blinking when shot.
-        // Can't really get around this, effects controll interfere with too much, eg blinking also controls colour.
-        GameObject.DestroyImmediate(instance.transform.GetChild(0).gameObject);
-        instance.GetComponent<SpriteRenderer>().enabled = true;
+        // Can't really get around this, effects interfere with too much, eg blinking also sets colour.
+        GameObject.Destroy(instance.transform.GetChild(0).gameObject);
 
-        base.OnInstantiate(instance);
+        instance.GetComponent<Collider2D>().enabled = false;
+        instance.AddComponent<PolygonCollider2D>();
+
+        SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = true;
+        spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+        instance.GetOrAddComponent<ColorComponent>().ApplyColor();
     }
 }

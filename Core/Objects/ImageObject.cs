@@ -27,12 +27,10 @@ public class ImageObject : IMapObject
     // Materials need a bit to load so I put them in here
     public static async void LateLoad<ComponentType>(GameObject instance) where ComponentType : Component
     {
-        Console.WriteLine("LATE LOAD");
-
         while (instance.GetComponent<ComponentType>() == null) await Task.Delay(1000 / 30);
 
         UnityEngine.Object.Destroy(instance.GetComponent<ComponentType>());
-        SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = instance.GetOrAddComponent<SpriteRenderer>();
         spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
         // Move to background if it has no collision
