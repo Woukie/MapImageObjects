@@ -7,7 +7,7 @@ namespace MapImageObjects.Core;
 
 [BepInDependency("com.willis.rounds.unbound")]
 [BepInDependency("io.olavim.rounds.mapsextended")]
-[BepInPlugin("com.woukie.rounds.mapimageobjects", "MapImageObjects", "1.2.0")]
+[BepInPlugin("com.woukie.rounds.mapimageobjects", "MapImageObjects", "1.2.1")]
 [BepInProcess("Rounds.exe")]
 public class Plugin : BaseUnityPlugin
 {

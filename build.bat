@@ -31,6 +31,10 @@ echo Moving built dll files to deploy location...
 copy "%pathBuild%\Core\MapImageObjects.dll" "%pathDeploy%"
 copy "%pathBuild%\Editor\MapImageObjectsEditor.dll" "%pathDeploy%"
 
+echo Adding to Thunderstore template...
+copy "%pathBuild%\Core\MapImageObjects.dll" "Thunderstore\Core"
+copy "%pathBuild%\Editor\MapImageObjectsEditor.dll" "Thunderstore\Editor"
+
 title Build Complete
 echo Build complete. Output is in the "%pathBuild%" folder. DLL files deployed to: "%pathDeploy%" and added to "Dependencies".
 pause
