@@ -4,7 +4,7 @@ cls
 set "pathCore=Core"
 set "pathEditor=Editor"
 set "pathBuild=Build"
-set "pathDeploy=C:\Program Files (x86)\Steam\steamapps\common\ROUNDS\BepInEx\plugins"
+set "pathDeploy=N:\SteamLibrary\steamapps\common\ROUNDS\BepInEx\plugins"
 
 if not exist "%pathBuild%" (
     mkdir "%pathBuild%"
