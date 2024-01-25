@@ -17,7 +17,7 @@ public class ImageDestructibleObject : ImageObject
         // Can't really get around this, effects interfere with too much, eg blinking also sets colour.
         GameObject.Destroy(instance.transform.GetChild(0).gameObject);
 
-        instance.GetComponent<Collider2D>().enabled = false;
+        UnityEngine.Object.Destroy(instance.GetComponent<Collider2D>());
         instance.AddComponent<PolygonCollider2D>();
 
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();

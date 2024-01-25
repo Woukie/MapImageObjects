@@ -15,7 +15,7 @@ public class ImageDynamicObject : ImageObject
     {
         // GameObject.Destroy(instance.transform.GetChild(0).gameObject);
 
-        instance.GetComponent<Collider2D>().enabled = false;
+        UnityEngine.Object.Destroy(instance.GetComponent<Collider2D>());
         instance.AddComponent<PolygonCollider2D>();
 
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
