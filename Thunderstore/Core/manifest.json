@@ -1,6 +1,6 @@
 {
   "name": "MapImageObjects",
-  "version_number": "1.2.1",
+  "version_number": "1.2.2",
   "website_url": "https://github.com/Woukie/MapImageObjects",
   "description": "Adds the image map object that gets images from the web.",
   "dependencies": [
