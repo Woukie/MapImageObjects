@@ -40,6 +40,11 @@ public class ImageObject : IMapObject
 
         instance.GetOrAddComponent<ColorComponent>().ApplyColor();
 
+        URIComponent uriComponent = instance.GetComponent<URIComponent>();
+        if (uriComponent != null) { 
+            uriComponent.SetURI(uriComponent.GetURI()); 
+        }
+
         return;
     }
 }
