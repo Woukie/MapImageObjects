@@ -11,6 +11,13 @@ You can finally add images from the web to your maps! Images can be placed and c
 
 ![colour](https://github.com/Woukie/Image/blob/main/democolour.gif?raw=true)
 
+### Breakable Images
+![breaking](https://github.com/Woukie/Image/blob/main/Breakable%20Images%20and%20Ropes.gif?raw=true)
+
+### Backgrounds!
+(Make sure to set these as a bit transparent so that bullets render over the top (I can't fix this)).
+![background](https://github.com/Woukie/Image/blob/main/Background%20Images.gif?raw=true)
+
 ### Watch me get destroyed by a bot
 
 ![fight](https://github.com/Woukie/Image/blob/main/demofight.gif?raw=true)
@@ -48,6 +55,13 @@ If you do install manually, make sure to also install the related dependencies d
 - mapsextended.editor
 
 ## FAQ
+
+#### I can't see bullet particles on my background!
+Make it a bit transparrent, some good values are
+- R: 212
+- G: 212
+- B: 212
+- A: 128
 
 #### My transparent image turned into a silhouette!
 
