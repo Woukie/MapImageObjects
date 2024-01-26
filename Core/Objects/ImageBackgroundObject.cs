@@ -11,6 +11,8 @@ public class ImageBackgroundObject : ImageObject
         Object.Destroy(instance.GetComponent<Collider2D>());
         Object.Destroy(instance.GetComponent<SFPolygon>());
 
+        DelayResetNetworkPhysics(instance);
+
         LateLoad<SpriteMask>(instance);
     }
 }

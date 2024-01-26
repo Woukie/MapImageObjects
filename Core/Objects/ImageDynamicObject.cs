@@ -26,5 +26,7 @@ public class ImageDynamicObject : ImageObject
         GameObject.Destroy(instance.transform.GetChild(1).gameObject); // Lines
 
         instance.GetOrAddComponent<ColorComponent>().ApplyColor();
+
+        DelayResetNetworkPhysics(instance);
     }
 }

@@ -20,6 +20,8 @@ public class ImageDestructibleObject : ImageObject
         UnityEngine.Object.Destroy(instance.GetComponent<Collider2D>());
         instance.AddComponent<PolygonCollider2D>();
 
+        DelayResetNetworkPhysics(instance);
+
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
         spriteRenderer.material = new Material(Shader.Find("Sprites/Default"));

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnboundLib;
 using MapImageObjects.Core.Components;
+using System.Collections;
 
 namespace MapImageObjects.Core;
 
@@ -19,6 +20,8 @@ public class ImageObject : IMapObject
 
         UnityEngine.Object.Destroy(instance.GetComponent<Collider2D>());
         instance.AddComponent<PolygonCollider2D>();
+
+        DelayResetNetworkPhysics(instance);
 
         LateLoad<SpriteMask>(instance);
     }
@@ -46,5 +49,12 @@ public class ImageObject : IMapObject
         }
 
         return;
+    }
+
+    // Super jank but I need a quick solution for this, NetworkPhysicsObject keeps resetting during loading for some reason
+    public async void DelayResetNetworkPhysics(GameObject instance)
+    {
+        await Task.Delay(1000);
+        instance.GetComponent<NetworkPhysicsObject>().Awake();
     }
 }
