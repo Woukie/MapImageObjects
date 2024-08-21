@@ -73,7 +73,7 @@ The shadows are determined by the collision, and Unity generates collision based
 
 #### How do I share my maps?
 
-[Here's](https://docs.google.com/document/d/1f0bZvolXIGhVRpIURijiVFN2k6p7bZQlzpfVuIE-HFw/edit#heading=h.1r8wfrbpupek) a good place to learn. But the gist is to zip up all your maps together with a [manifest, readme and an icon](https://rounds.thunderstore.io/package/create/docs/), then upload to [Thunderstore](https://rounds.thunderstore.io/package/create/).
+[Here's](https://docs.google.com/document/d/1f0bZvolXIGhVRpIURijiVFN2k6p7bZQlzpfVuIE-HFw/edit#heading=h.1r8wfrbpupek) a good place to learn. But the gist is to zip up all your maps together with a [manifest, readme and an icon](https://thunderstore.io/package/create/docs/), then upload to [Thunderstore](https://thunderstore.io/package/create/).
 
 #### Help there is bug
 
